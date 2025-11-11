@@ -11,7 +11,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Globe className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">CHINAPAY</span>
+            <span className="text-2xl font-bold text-foreground">YuanBR</span>
           </div>
           <Button className="bg-[var(--gradient-hero)] hover:opacity-90 transition-opacity">
             Começar Agora
@@ -104,7 +104,7 @@ const Index = () => {
             <Card className="p-8 border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 hover-scale transition-transform">
               <div className="flex items-center gap-3 mb-6">
                 <CheckCircle2 className="w-8 h-8 text-primary" />
-                <h3 className="text-2xl font-bold text-primary">Com CHINAPAY</h3>
+                <h3 className="text-2xl font-bold text-primary">Com YuanBR</h3>
               </div>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -157,7 +157,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">Você Paga</h3>
                 <p className="text-sm text-muted-foreground">
-                  Seu dinheiro fica retido em segurança na CHINAPAY
+                  Seu dinheiro fica retido em segurança na YuanBR
                 </p>
               </Card>
 
@@ -263,7 +263,7 @@ const Index = () => {
 
             <Card className="p-8 bg-card border-2 border-border">
               <p className="text-lg text-muted-foreground italic mb-4">
-                "Já perdi mais de R$ 80 mil com fornecedores que sumiram. Com a CHINAPAY, durmo tranquilo sabendo que meu dinheiro só sai quando o produto chega."
+                "Já perdi mais de R$ 80 mil com fornecedores que sumiram. Com a YuanBR, durmo tranquilo sabendo que meu dinheiro só sai quando o produto chega."
               </p>
               <p className="font-semibold text-foreground">— Carlos M., Importador de Eletrônicos</p>
             </Card>
@@ -294,10 +294,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <Globe className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold text-foreground">CHINAPAY</span>
+              <span className="text-xl font-bold text-foreground">YuanBR</span>
             </div>
             <p className="text-muted-foreground text-center">
-              © 2025 CHINAPAY. Protegendo importadores brasileiros desde 2020.
+              © 2025 YuanBR. Protegendo importadores brasileiros desde 2020.
             </p>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors story-link">Termos</a>
