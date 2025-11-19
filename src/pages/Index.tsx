@@ -1,9 +1,38 @@
 import CurrencyConverter from "@/components/CurrencyConverter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Shield, Zap, TrendingUp, ArrowRight, Globe, CheckCircle2, XCircle, Lock, AlertTriangle } from "lucide-react";
+import { Shield, Zap, TrendingUp, ArrowRight, Globe, CheckCircle2, XCircle, Lock, AlertTriangle, Languages, User, Store } from "lucide-react";
+import { useState } from "react";
+
+const translations = {
+  pt: {
+    clientLogin: "Login Cliente",
+    supplierLogin: "Login Fornecedor",
+    getStarted: "Começar Agora",
+    heroAlert: "Cansado de ser enganado por fornecedores?",
+    heroTitle1: "Chega de",
+    heroTitle2: "prejuízo",
+    heroTitle3: "com fornecedores chineses",
+    heroDescription: "Pagamento seguro até a entrega confirmada.",
+    heroDescriptionBold: "Seus produtos chegam ou seu dinheiro volta. Simples assim."
+  },
+  cn: {
+    clientLogin: "客户登录",
+    supplierLogin: "供应商登录",
+    getStarted: "立即开始",
+    heroAlert: "为巴西客户提供安全可靠的收款解决方案",
+    heroTitle1: "安全便捷的",
+    heroTitle2: "跨境收款",
+    heroTitle3: "服务平台",
+    heroDescription: "付款安全直到确认交货。",
+    heroDescriptionBold: "产品送达或退款。就这么简单。"
+  }
+};
 
 const Index = () => {
+  const [language, setLanguage] = useState<'pt' | 'cn'>('pt');
+  const t = translations[language];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -13,9 +42,28 @@ const Index = () => {
             <Globe className="w-8 h-8 text-primary" />
             <span className="text-2xl font-bold text-foreground">YuanBR</span>
           </div>
-          <Button className="bg-[var(--gradient-hero)] hover:opacity-90 transition-opacity">
-            Começar Agora
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLanguage(language === 'pt' ? 'cn' : 'pt')}
+              className="gap-2"
+            >
+              <Languages className="w-4 h-4" />
+              {language === 'pt' ? '中文' : 'PT'}
+            </Button>
+            <Button variant="outline" size="sm" className="gap-2">
+              <User className="w-4 h-4" />
+              {t.clientLogin}
+            </Button>
+            <Button variant="outline" size="sm" className="gap-2">
+              <Store className="w-4 h-4" />
+              {t.supplierLogin}
+            </Button>
+            <Button className="bg-[var(--gradient-hero)] hover:opacity-90 transition-opacity">
+              {t.getStarted}
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -29,15 +77,15 @@ const Index = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-destructive/10 rounded-full animate-fade-in">
                 <AlertTriangle className="w-4 h-4 text-destructive" />
-                <span className="text-sm font-semibold text-destructive">Cansado de ser enganado por fornecedores?</span>
+                <span className="text-sm font-semibold text-destructive">{t.heroAlert}</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
-                Chega de
-                <span className="text-destructive"> prejuízo </span>
-                com fornecedores chineses
+                {t.heroTitle1}
+                <span className="text-destructive"> {t.heroTitle2} </span>
+                {t.heroTitle3}
               </h1>
               <p className="text-xl text-muted-foreground animate-fade-in">
-                <strong className="text-foreground">Pagamento seguro até a entrega confirmada.</strong> Seus produtos chegam ou seu dinheiro volta. Simples assim.
+                <strong className="text-foreground">{t.heroDescription}</strong> {t.heroDescriptionBold}
               </p>
               <div className="flex flex-wrap gap-4 animate-fade-in">
                 <Button size="lg" className="bg-[var(--gradient-hero)] hover:opacity-90 transition-opacity text-lg px-8 hover-scale">
