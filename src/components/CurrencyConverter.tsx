@@ -9,7 +9,7 @@ const CurrencyConverter = () => {
   const [brlAmount, setBrlAmount] = useState<string>("1000");
   const [cnyAmount, setCnyAmount] = useState<string>("0");
   const [isReversed, setIsReversed] = useState(false);
-  const FEE_RATE = 0.02; // 2% fee
+  const FEE_RATE = 0.05; // 5% fee
   const EXCHANGE_RATE = 1.42; // 1 BRL = 1.42 CNY (approximate)
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const CurrencyConverter = () => {
             <span className="font-semibold text-foreground">1 BRL = {EXCHANGE_RATE} CNY</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Taxa de serviço (2%)</span>
+            <span className="text-muted-foreground">Taxa de serviço (5%)</span>
             <span className="font-semibold text-secondary">R$ {fee.toFixed(2)}</span>
           </div>
           <div className="flex justify-between text-base font-bold pt-2">
